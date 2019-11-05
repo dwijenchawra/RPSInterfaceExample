@@ -6,7 +6,7 @@ public class RunMe {
 	public static void main(String[] args) {
 		RPS game = new RPS(); 								// create the game object
 
-		Player p1 = new AlwaysRockPlayer();
+		Player p1 = new RandomPlayer();
 		Player p2 = new RandomPlayer();
 
 		for (int i = 0; i < TOTAL_GAMES; i++) { 			// play many games together
