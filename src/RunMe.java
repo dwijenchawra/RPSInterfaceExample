@@ -6,8 +6,8 @@ public class RunMe {
 	public static void main(String[] args) {
 		RPS game = new RPS(); 								// create the game object
 
-		Player p1 = new RandomPlayer();
-		Player p2 = new RandomPlayer();
+		Player p1 = new BeatByFrequency();
+		Player p2 = new PlayToBeatInfrequentPlays(10);
 
 		for (int i = 0; i < TOTAL_GAMES; i++) { 			// play many games together
 			int p1move = p1.getMove(); 						// get the moves from the players
@@ -30,5 +30,6 @@ public class RunMe {
 		System.out.println("Results:\n\tplayer 1 wins: " + game.getP1Percent()
 				+ "%\tplayer2 wins: " + game.getP2Percent() + "%\tties: "
 				+ game.getTiesPercent() + "%");
+
 	}
 }

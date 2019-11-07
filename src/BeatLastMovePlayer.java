@@ -1,8 +1,8 @@
 public class BeatLastMovePlayer implements Player {
-    int opponentPreviousMove;
+    private int opponentPreviousMove;
 
     public BeatLastMovePlayer() {
-        this.opponentPreviousMove = RPS.ROCK;
+        this.opponentPreviousMove = RPS.PAPER;
     }
 
     @Override
