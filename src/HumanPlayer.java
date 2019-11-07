@@ -12,7 +12,7 @@ public class HumanPlayer implements Player {
 		System.out.print("Type r/p/s: ");
 		String c = keyboard.next();
 		
-		if (c.equals("r")) return RPS.ROCK;
+		if (c.equals("i")) return RPS.ROCK;
 		if (c.equals("p")) return RPS.PAPER;
 		return RPS.SCISSORS;
 	}

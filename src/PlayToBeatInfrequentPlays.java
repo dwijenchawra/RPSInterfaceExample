@@ -2,11 +2,6 @@ import java.util.ArrayList;
 
 public class PlayToBeatInfrequentPlays implements Player {
     private ArrayList<Integer> opponentMovesFrequency; // 0 is rock, 1 is paper, 2 is scissors
-
-    public ArrayList<Integer> getOpponentMoves() {
-        return opponentMoves;
-    }
-
     private ArrayList<Integer> opponentMoves;
     private int totalMoves;
     private int numToRemember;
@@ -21,6 +16,8 @@ public class PlayToBeatInfrequentPlays implements Player {
         this.opponentMoves = new ArrayList<>();
     }
 
+
+
     @Override
     public int getMove() {
         return generateMove(opponentMovesFrequency, totalMoves);
@@ -32,8 +29,8 @@ public class PlayToBeatInfrequentPlays implements Player {
         double rockFreq = moves.get(0) / totalMoves;
         double paperFreq = moves.get(1) / totalMoves;
         double scissorsFreq = moves.get(2) / totalMoves;
-        System.out.println(rockFreq + " " + scissorsFreq + " " + paperFreq);
-
+        // System.out.println(rockFreq + " " + scissorsFreq + " " + paperFreq);
+        System.out.println(opponentMoves);
         if (totalMoves >= numToRemember) {
             if (opponentMoves.get(0) == 0) {
                 opponentMovesFrequency.set(0, opponentMovesFrequency.get(0) - 1);
