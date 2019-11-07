@@ -17,7 +17,6 @@ public class PlayToBeatInfrequentPlays implements Player {
     }
 
 
-
     @Override
     public int getMove() {
         return generateMove(opponentMovesFrequency, totalMoves);
@@ -42,14 +41,24 @@ public class PlayToBeatInfrequentPlays implements Player {
             opponentMoves.remove(0);
         }
 
-        if (move < rockFreq) {
-            return RPS.PAPER;
-        } else if (move >= rockFreq && move < rockFreq + paperFreq) {
+        if (paperFreq < rockFreq && paperFreq < scissorsFreq) {
             return RPS.SCISSORS;
-        } else {
+        } else if (rockFreq < paperFreq && rockFreq < scissorsFreq) {
             return RPS.PAPER;
+        } else if (scissorsFreq < paperFreq && scissorsFreq < rockFreq) {
+            return RPS.ROCK;
+        } else {
+            if (totalMoves > 0) {
+                if (opponentMoves.get(opponentMoves.size() - 1) == RPS.ROCK) {
+                    return RPS.PAPER;
+                } else if (opponentMoves.get(opponentMoves.size() - 1) == RPS.SCISSORS) {
+                    return RPS.ROCK;
+                } else {
+                    return RPS.SCISSORS;
+                }
+            }
         }
-
+        return RPS.ROCK;
     }
 
     @Override
